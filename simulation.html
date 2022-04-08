@@ -37,35 +37,65 @@
   <script type="text/javascript" src="js/board.index.js"></script>
   <script type="text/javascript" src="js/community.side.js"></script>
   <script type="text/javascript" src="js/message.send.js"></script>
+  <style type="text/css">
+     .wrap > .group > ul >div{
+         overflow: hidden;
+      }
+
+      .wrap > .group > ul > div > li{
+         float: left;
+         list-style: none;
+      }
+
+      .wrap > .group > ul > div > li > a{
+         /*a 태그는 인라인 속성이므로 블록으로 바꿔줌*/
+         display: block; 
+         width: 100px;
+         height: 20px;
+         padding: 10px;
+         text-align: center;
+         line-height: 20px;
+
+      }
+  </style>
 </head>
 <body>
 
-<nav>
+  <nav>
     <div class="wrap">
       <div id="logo">
-        <a href="/"><img src="images/dotcom.JPG"></a>
-        <p><span class="name multiple">닷컴</span><span class="subname">다부전공</span></p>
+        <a href="/"><img src="/images/new/nav.logo.png"></a>
+        <p><span class="name multiple">닷컴</span><span class="subname">건국대 서울캠</span></p>
       </div>
       <div id="account">
-        <a href="/message" title="쪽지함" class="icon message">쪽지함</a></li>
-        <a href="/my" title="내 정보" class="icon my">정보</a>
-        <input type="hidden" id="userUserid" value="hs11015">
+        <a href="/message" title="쪽지함" class="icon message">쪽지함</a>
+        <a href="/my" title="내 정보" class="icon my">내 정보</a>
+        <input type="hidden" id="userUserid" value="jump0716">
         <input type="hidden" id="userSchool" value="17">
         <input type="hidden" id="userCampus" value="30">
       </div>
-      <ul id="menu">
-        <li><a href="main_page.html">홈</a></li>
-        <li><a href="doubleboard.html">다전공게시판</a></li>
-        <li><a href="minorboard.html">부전공게시판</a></li>
-        <li><a href="information.html">정보게시판</a></li>
-        <li><a href="free.html">자유게시판</a></li>
-        <li class="active"><a href="simulation.html">졸업시뮬레이션</a></li>
-      </ul>
+      <ul id="menu">        
+        <li class="active"><a href="main_page.html">게시판</a></li>
+        <li><a href="simulation.html">졸업시뮬레이션</a></li>
+        <li><a href="https://bulletins.konkuk.ac.kr/ko-KR/">요람</a></li>
     </div>
   </nav>
-<div id="submenu">
-		<input type="hidden" id="communityCampusId" value="30">	</div>
-  <div id="container" class="article">
+<div id="submenu" style="background-color: white;">
+  <div class="wrap"  style="padding-right: 300px; background-color: #F2F2F2;" >
+    <div class="group">
+      <ul style="list-style: none;">
+        <div style="width: 500px;"  style="background-color : #F2F2F2">
+          <li style="float: left;"><a href="doubleboard.html" data-id="370453" class="new" style="background-color : #F2F2F2">다전공게시판</a></li>
+          <li style="float: left;"><a href="minorboard.html" data-id="257507" class="new" style="background-color : #F2F2F2">부전공게시판</a></li>
+          <li style="float: left;"><a href="free.html" data-id="385964" class="new" style="background-color : #F2F2F2">자유게시판</a></li>
+          <li style="float: left;"><a href="information.html" data-id="374634" class="new" style="background-color : #F2F2F2">정보게시판</a></li>
+        </div>      
+      </ul>
+    </div>
+
+
+    <input type="hidden" id="communityCampusId" value="30">   </div>
+      <div id="container" class="article" >
     <input type="hidden" id="isUser" value="1">
     <input type="hidden" id="boardId" value="370453">
     <aside class="none">
@@ -73,7 +103,9 @@
         <a class="hamburger"></a>
       </div>
     </aside>
-    <div class="wrap title">다전공 전용 자유게시판</div>
+    
+
+    <div class="wrap title">졸업시뮬레이션</div>
     <div class="wrap articles">
       <a id="writeArticleButton">새 글을 작성해주세요!</a>
       <form class="write"><p><input name="title" autocomplete="off" placeholder="글 제목" class="title"></p><p><textarea name="text" placeholder="주의사항 ~~~~ 글을 입력하세요" class="smallplaceholder"></textarea></p>
@@ -85,7 +117,11 @@
       </form>
     </div>
     <hr>
-    <div class="rightside"></div>
+    <div class="rightside">
+      <form class="search">
+         <input type="text" name="keyword" placeholder="채팅을 입력하세요!" class="text">
+      </form>
+   </div>
     <form id="abuseForm" class="modal">
       <a title="닫기" class="close"></a>
       <h3>신고 사유 선택</h3>
